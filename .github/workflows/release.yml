@@ -22,7 +22,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.EDIK_TOKEN }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Create tag variables
         env:
           TAG: ${{ github.ref_name }}
