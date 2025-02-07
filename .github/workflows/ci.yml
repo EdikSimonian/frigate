@@ -30,7 +30,7 @@ jobs:
         id: setup
         uses: ./.github/actions/setup
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.EDIK_TOKEN }}
       - name: Build and push amd64 standard build
         uses: docker/build-push-action@v5
         with:
@@ -53,7 +53,7 @@ jobs:
         id: setup
         uses: ./.github/actions/setup
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.EDIK_TOKEN }}
       - name: Build and push arm64 standard build
         uses: docker/build-push-action@v5
         with:
@@ -88,7 +88,7 @@ jobs:
         id: setup
         uses: ./.github/actions/setup
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.EDIK_TOKEN }}
       - name: Build and push TensorRT (Jetson, Jetpack 4)
         env:
           ARCH: arm64
@@ -117,7 +117,7 @@ jobs:
         id: setup
         uses: ./.github/actions/setup
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.EDIK_TOKEN }}
       - name: Build and push TensorRT (Jetson, Jetpack 5)
         env:
           ARCH: arm64
@@ -148,7 +148,7 @@ jobs:
         id: setup
         uses: ./.github/actions/setup
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.EDIK_TOKEN }}
       - name: Build and push TensorRT (x86 GPU)
         env:
           COMPUTE_LEVEL: "50 60 70 80 90"
@@ -176,7 +176,7 @@ jobs:
         id: setup
         uses: ./.github/actions/setup
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.EDIK_TOKEN }}
       - name: Build and push Rockchip build
         uses: docker/bake-action@v6
         with:
@@ -202,7 +202,7 @@ jobs:
         id: setup
         uses: ./.github/actions/setup
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.EDIK_TOKEN }}
       - name: Build and push Hailo-8l build
         uses: docker/bake-action@v6
         with:
@@ -245,7 +245,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.EDIK_TOKEN }}
       - name: Create short sha
         run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
       - uses: int128/docker-manifest-create-action@v2
